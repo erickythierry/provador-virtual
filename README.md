@@ -9,7 +9,7 @@ ficaria em você — sem ir ao provador.
 Tudo roda **no navegador**: nenhuma foto sai do aparelho. Funciona como PWA
 instalável e offline depois da primeira carga.
 
-> Conceito original em [`ideia.md`](./ideia.md) e [`especificacao.md`](./especificacao.md).
+> Conceito original tirado de um video meme.
 
 ## Stack
 
