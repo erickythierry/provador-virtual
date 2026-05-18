@@ -102,17 +102,6 @@ são regenerados pelo `postinstall`. Um `npm install` após o clone basta.
   tem suporte parcial (cai para download).
 - Primeira carga baixa ~16 MB do modelo (depois fica em cache pela PWA).
 
-## Publicando no GitHub
-
-```bash
-git init
-git add .
-git commit -m "Provador Virtual: webapp de provador virtual com câmera"
-git branch -M main
-git remote add origin git@github.com:SEU_USUARIO/provador-virtual.git
-git push -u origin main
-```
-
 ## Licença
 
 [MIT](./LICENSE).
