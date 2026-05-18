@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#111111" />
+    <title>Provador Virtual</title>
+  </head>
+  <body>
+    <!-- Tela 1: captura/upload da foto do usuário -->
+    <section id="screen-capture" class="screen active">
+      <header class="bar">
+        <h1>Provador Virtual</h1>
+      </header>
+      <div class="capture-stage">
+        <video id="capture-video" playsinline autoplay muted></video>
+        <p id="capture-hint" class="hint">
+          Tire uma foto sua de frente, de corpo inteiro até a cintura.
+        </p>
+      </div>
+      <div class="bar bottom">
+        <label class="btn ghost">
+          Enviar foto
+          <input id="file-input" type="file" accept="image/*" hidden />
+        </label>
+        <button id="shoot-btn" class="btn primary big-round" aria-label="Tirar foto"></button>
+        <button id="flip-cam-btn" class="btn ghost">Virar câmera</button>
+      </div>
+    </section>
+
+    <!-- Tela 2: ajuste da máscara da roupa -->
+    <section id="screen-mask" class="screen">
+      <header class="bar">
+        <button id="mask-back" class="btn ghost">Voltar</button>
+        <h1>Ajuste o recorte da roupa</h1>
+      </header>
+      <div id="mask-stage" class="mask-stage">
+        <canvas id="mask-canvas"></canvas>
+      </div>
+      <p class="hint">
+        A área marcada será o "buraco" que mostra a roupa da loja. Pinte para
+        ajustar.
+      </p>
+      <div class="bar tools">
+        <button id="tool-add" class="btn toggle active">Adicionar</button>
+        <button id="tool-remove" class="btn toggle">Remover</button>
+        <label class="slider">
+          Pincel
+          <input id="brush-size" type="range" min="6" max="80" value="28" />
+        </label>
+        <label class="slider">
+          Linha de corte (tira a calça)
+          <input id="cut-line" type="range" min="20" max="100" value="60" />
+        </label>
+        <button id="mask-reset" class="btn ghost">Refazer IA</button>
+      </div>
+      <div class="bar bottom">
+        <button id="mask-confirm" class="btn primary wide">
+          Usar este recorte
+        </button>
+      </div>
+    </section>
+
+    <!-- Tela 3: provador (câmera traseira + overlay) -->
+    <section id="screen-fit" class="screen">
+      <video id="fit-video" playsinline autoplay muted></video>
+      <canvas id="overlay-canvas" class="overlay"></canvas>
+      <header class="bar floating">
+        <button id="fit-back" class="btn ghost">Trocar foto</button>
+      </header>
+      <div class="bar floating bottom">
+        <label class="slider light">
+          Opacidade
+          <input id="opacity-range" type="range" min="20" max="100" value="100" />
+        </label>
+        <button id="capture-btn" class="btn primary big-round" aria-label="Salvar combinação"></button>
+        <button id="reset-transform" class="btn ghost">Centralizar</button>
+      </div>
+    </section>
+
+    <div id="toast" class="toast"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

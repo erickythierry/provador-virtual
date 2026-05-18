@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Gerados por scripts/fetch-assets.mjs (reproduzíveis via `npm install`)
+public/models/
+public/wasm/
+public/icons/
